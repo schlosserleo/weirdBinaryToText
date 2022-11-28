@@ -19,7 +19,7 @@ https://twitter.com/TheBlackHole08/status/1595951413620011008?s=20&t=bFKNAh3x2mz
 `cd weirdBinaryToText`
 
 ## How-To
-`python weirdBinaryToText -h` for manual
+`python weirdBinaryToText.py -h` for manual
 
 Example:
 
