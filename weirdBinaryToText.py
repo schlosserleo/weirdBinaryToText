@@ -17,7 +17,11 @@ def trans_bin_to_bin(convert_param, lang):
 
 
 def text_to_bin(convert_param):
-    return
+    s = ""
+    j=0
+    for i in convert_param:
+        s += format(ord(i), "08b")+" "
+    return s
 
 
 def bin_to_text(convert_param):
@@ -48,13 +52,13 @@ while sys.argv:
         mode = "btb"
     elif re.search(r'^(-tbb)$', arg):
         mode = "tbb"
-    elif re.search(r'^(-tb)$', arg):
+    elif re.search(r'^(-tTOb)$', arg):
         mode = "tb"
-    elif re.search(r'^(-bt)$', arg):
+    elif re.search(r'^(-b>t)$', arg):
         mode = "bt"
-    elif re.search(r'^(-tbt)$', arg):
+    elif re.search(r'^(-tb>t)$', arg):
         mode = "tbt"
-    elif re.search(r'^(-ttb)$', arg):
+    elif re.search(r'^(-t>tb)$', arg):
         mode = "ttb"
 
     elif re.search(r'^(-h)$', arg):
@@ -65,7 +69,7 @@ if mode == "btb":
 elif mode == "tbb":
     print(trans_bin_to_bin(trans_bin_param, selected_lang))
 elif mode == "tb":
-    print(trans_bin_to_bin(trans_bin_param, selected_lang))
+    print(text_to_bin(txt_param))
 elif mode == "bt":
     print(trans_bin_to_bin(trans_bin_param, selected_lang))
 elif mode == "tbt":
