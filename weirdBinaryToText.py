@@ -6,7 +6,7 @@ bin_param = ""
 text_param = ""
 selected_lang = ""
 weird_param = ""
-lang_dict = {"EN": ["Zero", "One"], "DE": ["Null", "Eins"], "FR": ["Zéro", "Un"], "ES": ["Cero", "Uno"]}
+lang_dict = {"EN": ["Zero", "One"], "DE": ["Null", "Eins"], "FR": ["Zero", "Un"], "ES": ["Cero", "Uno"]}
 help_text = " Version 1.0 of The Weird Binary Converter\n" \
             "------------------------------------------------------------------------------\n" \
             "\033[4mFormats\033[0m: w = weird binary. e.g.: 'ZeroOneZero...\n" \
