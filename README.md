@@ -16,4 +16,4 @@ Im still working on the Conversion of real words into this weird binary style.
 So u can input "a" > 01100001 / ZeroOneOneZeroZeroZeroZeroOne
 
 Inspired on twitter in this thread:
-
+https://twitter.com/TheBlackHole08/status/1595951413620011008?s=20&t=bFKNAh3x2mzI5b2v4_qAaQ
