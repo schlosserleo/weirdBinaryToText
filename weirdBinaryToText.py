@@ -93,4 +93,4 @@ elif mode == "tw":
 elif mode == "help":
     print(help_text)
 else:
-    print("You have to give an argument. e.g.:\n\n'python example.py -b 001011010 0100100110 -l EN -bttb'")
+    print("You have to give an argument. e.g.:\n\n'python weirdBinaryToText.py -t ”Hello World” -l EN -tw")
