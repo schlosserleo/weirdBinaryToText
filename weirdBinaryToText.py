@@ -7,7 +7,7 @@ text_param = ""
 selected_lang = ""
 weird_param = ""
 lang_dict = {"EN": ["Zero", "One"], "DE": ["Null", "Eins"], "FR": ["Zéro", "Un"], "ES": ["Cero", "Uno"]}
-helptext = ""  # TODO: Write a Help / Man Page
+help_text = ""  # TODO: Write a Help / Man Page
 
 
 def bin_to_weird(convert_param, lang):
