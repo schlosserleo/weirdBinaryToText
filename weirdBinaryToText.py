@@ -6,18 +6,25 @@ bin_param = ""
 text_param = ""
 selected_lang = ""
 weird_param = ""
-lang_dict = {"EN": ["Zero", "One"], "DE": ["Null", "Eins"], "FR": ["Zero", "Un"], "ES": ["Cero", "Uno"]}
-help_text = " Version 1.0 of The Weird Binary Converter\n" \
-            "------------------------------------------------------------------------------\n" \
-            "\033[4mFormats\033[0m: w = weird binary. e.g.: 'ZeroOneZero...\n" \
-            "         You have to declare a language for this format. e.g.: '-l EN'\n" \
-            "         b = binary e.g.: '01100001'\n" \
-            "         t = normal text e.g.: 'abcdefg\n\n" \
-            "\033[4mModes\033[0m:   bw: binary => weird binary.\n         wb: weird binary => binary.\n         bt: " \
-            "binary => normal text.\n         tb: normal text => binary.\n         wt: weird binary => normal text.\n" \
-            "         tw: normal text => weird binary\n\n\033[4mSyntax\033[0m:\n" \
-            "python weirdBinaryToText.py -[input format] <input> (-l <EN/DE/...>) -[mode]\n\n" \
-            "\033[4mExample\033[0m:\npython weirdBinaryToText.py -t ”Hello World” -l EN -tw"
+lang_dict = {
+    "EN": ["Zero", "One"],
+    "DE": ["Null", "Eins"],
+    "FR": ["Zero", "Un"],
+    "ES": ["Cero", "Uno"],
+}
+help_text = (
+    " Version 1.0 of The Weird Binary Converter\n"
+    "------------------------------------------------------------------------------\n"
+    "\033[4mFormats\033[0m: w = weird binary. e.g.: 'ZeroOneZero...\n"
+    "         You have to declare a language for this format. e.g.: '-l EN'\n"
+    "         b = binary e.g.: '01100001'\n"
+    "         t = normal text e.g.: 'abcdefg\n\n"
+    "\033[4mModes\033[0m:   bw: binary => weird binary.\n         wb: weird binary => binary.\n         bt: "
+    "binary => normal text.\n         tb: normal text => binary.\n         wt: weird binary => normal text.\n"
+    "         tw: normal text => weird binary\n\n\033[4mSyntax\033[0m:\n"
+    "python weirdBinaryToText.py -[input format] <input> (-l <EN/DE/...>) -[mode]\n\n"
+    "\033[4mExample\033[0m:\npython weirdBinaryToText.py -t ”Hello World” -l EN -tw"
+)
 
 
 def bin_to_weird(convert_param, lang):
@@ -53,29 +60,29 @@ def bin_to_text(convert_param):
 script = sys.argv.pop(0)
 while sys.argv:
     arg = sys.argv.pop(0)
-    if re.search(r'^(-b)$', arg):
+    if re.search(r"^(-b)$", arg):
         bin_param = sys.argv.pop(0)
-    elif re.search(r'^(-w)$', arg):
+    elif re.search(r"^(-w)$", arg):
         weird_param = sys.argv.pop(0)
-    elif re.search(r'^(-t)$', arg):
+    elif re.search(r"^(-t)$", arg):
         text_param = sys.argv.pop(0)
-    elif re.search(r'^(-l)$', arg):
+    elif re.search(r"^(-l)$", arg):
         selected_lang = lang_dict[sys.argv.pop(0)]
 
-    elif re.search(r'^(-bw)$', arg):
+    elif re.search(r"^(-bw)$", arg):
         mode = "bw"
-    elif re.search(r'^(-wb)$', arg):
+    elif re.search(r"^(-wb)$", arg):
         mode = "wb"
-    elif re.search(r'^(-tb)$', arg):
+    elif re.search(r"^(-tb)$", arg):
         mode = "tb"
-    elif re.search(r'^(-bt)$', arg):
+    elif re.search(r"^(-bt)$", arg):
         mode = "bt"
-    elif re.search(r'^(-wt)$', arg):
+    elif re.search(r"^(-wt)$", arg):
         mode = "wt"
-    elif re.search(r'^(-tw)$', arg):
+    elif re.search(r"^(-tw)$", arg):
         mode = "tw"
 
-    elif re.search(r'^(-h)$', arg):
+    elif re.search(r"^(-h)$", arg):
         mode = "help"
 
 if mode == "bw":
@@ -93,4 +100,4 @@ elif mode == "tw":
 elif mode == "help":
     print(help_text)
 else:
-    print("You have to give an argument. e.g.:\n\n'python weirdBinaryToText.py -t ”Hello World” -l EN -tw")
+    print(help_text)
